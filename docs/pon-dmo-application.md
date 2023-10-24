@@ -1,5 +1,4 @@
-# The Application of the Polifonia Ontology Network for the Digital
-Music
+# The Application of the Polifonia Ontology Network for the Digital Music Observatory
 Daniel Antal
 
 - [Executive summary](#executive-summary)

@@ -64,6 +64,11 @@ samples to draw up this agreement in 1-2 iterations and to include all
 relevant Polifonia stakeholders in the Digital Music Observatory’s
 stakeholder network because Polifonia’s network will end in April 2024.
 
+Our working hypothesis is that the PON ontologies can support in their
+current 1.0 form some of the reproducible research work carried out on
+the Digital Music Observatory and in the Open Music Europe research
+project.
+
 ## Background
 
 The `Digital Music Observatory` is a prototype of an open,

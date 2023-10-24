@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daniel Antal">
+
+<title>The Application of the Polifonia Ontology Network for the Digital Music</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="pon-dmo-application_files/libs/clipboard/clipboard.min.js"></script>
+<script src="pon-dmo-application_files/libs/quarto-html/quarto.js"></script>
+<script src="pon-dmo-application_files/libs/quarto-html/popper.min.js"></script>
+<script src="pon-dmo-application_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="pon-dmo-application_files/libs/quarto-html/anchor.min.js"></script>
+<link href="pon-dmo-application_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="pon-dmo-application_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="pon-dmo-application_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="pon-dmo-application_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="pon-dmo-application_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #00348A;
+      }
+</style>
+
+
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">The Application of the Polifonia Ontology Network for the Digital Music</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Daniel Antal <a href="https://orcid.org/0000-0003-1689-0557" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#application-plans" id="toc-application-plans" class="nav-link" data-scroll-target="#application-plans">Application Plans</a>
+  <ul class="collapse">
+  <li><a href="#research-data-management" id="toc-research-data-management" class="nav-link" data-scroll-target="#research-data-management">Research data management</a></li>
+  </ul></li>
+  <li><a href="#interoperability-between-industry-and-heritage-databases" id="toc-interoperability-between-industry-and-heritage-databases" class="nav-link" data-scroll-target="#interoperability-between-industry-and-heritage-databases">Interoperability between industry and heritage databases</a>
+  <ul class="collapse">
+  <li><a href="#music-entity-and-composition-object" id="toc-music-entity-and-composition-object" class="nav-link" data-scroll-target="#music-entity-and-composition-object">Music entity and Composition Object</a></li>
+  <li><a href="#recording-process-performing-process-and-rights" id="toc-recording-process-performing-process-and-rights" class="nav-link" data-scroll-target="#recording-process-performing-process-and-rights">Recording process, performing process, and rights</a></li>
+  <li><a href="#recording-and-release" id="toc-recording-and-release" class="nav-link" data-scroll-target="#recording-and-release">Recording and Release</a></li>
+  </ul></li>
+  <li><a href="#licensing" id="toc-licensing" class="nav-link" data-scroll-target="#licensing">Licensing</a></li>
+  <li><a href="#case-study-briging-back-rare-music-into-circulation" id="toc-case-study-briging-back-rare-music-into-circulation" class="nav-link" data-scroll-target="#case-study-briging-back-rare-music-into-circulation">Case study: Briging back rare music into circulation</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="pon-dmo-application.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="pon-dmo-application.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Our working hypothesis is that the PON ontologies can support in their current 1.0 form some of the reproducible research work carried out on the Digital Music Observatory and in the Open Music Europe research project.</p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>The <code>Digital Music Observatory</code> is a prototype of an open, decentralised, reproducible research-supported data observatory that follows the Feasibility Study for establishing a European Music Observatory. High-quality indicators and databases are being developed, consulted with the industry, produced and added to the Digital Music Observatory web resource in various public and private projects. The platform is being developed by Reprex, and the four main Data Pillars by the Open Music Europe project.</p>
+<p>The <code>Polifonia Ontology Network</code> (PON) provides a modular backbone of music ontologies to address both cultural heritage and more general queries in the music domain. As illustrated in the diagram below,&nbsp;<code>PON v1.0</code>&nbsp;comprises 15 ontology module that are organised thematically and hierarchically. Four foundational models provide interoperability across PON through their abstract design:&nbsp;<code>Source</code>,&nbsp;<code>Instrument</code>,&nbsp;<code>Music Meta</code>, and&nbsp;<code>Music Representation</code>.</p>
+</section>
+<section id="application-plans" class="level2">
+<h2 class="anchored" data-anchor-id="application-plans">Application Plans</h2>
+<section id="research-data-management" class="level3">
+<h3 class="anchored" data-anchor-id="research-data-management">Research data management</h3>
+<p>Open Music Europe should adopt a new version of its research data management activities and Data Management Plan that explicitly endorses some of the Polifonia ontologies.</p>
+</section>
+</section>
+<section id="interoperability-between-industry-and-heritage-databases" class="level2">
+<h2 class="anchored" data-anchor-id="interoperability-between-industry-and-heritage-databases">Interoperability between industry and heritage databases</h2>
+<p><code>Music Meta</code> is a rich and flexible semantic model to describe music metadata related to artists, compositions, performances, recordings, broadcasts, and links. Music Meta provides an abstraction layer representing (Western) music metadata across different genres and periods for various stakeholders and music datasets. We want to test and increase the applicability of this ontology to provide interoperability between cultural heritage organisations, libraries and industry organisations like copyright management organisations, labels, publishers and distributors.</p>
+<p>Most industry databases are organised around three central objects: the “Phonogram” or sound recording, the “Musical Work” and the “Music score”. Each is standardised, and because various rights are attached to these objects, they have well-maintained global registers and ISO permanent IDs. It would be very practical if PON would not recognise these central objects and offer equivalent classes, as almost all industry uses and most heritage uses (such as libraries, and archives) use them.</p>
+<ol type="1">
+<li>International Standard Recording Code or ISRC (ISO 3901) -- unknown number of PIDs, but more than 100 million objects;</li>
+<li>International Standard Musical Work Code or ISWC (ISO 15707) -- CIS-Net has about 52 million PIDs and objects;</li>
+<li>International Standard Music Number or ISMN (ISO 10957) for printed music -- a lower number, because printed music historically was published with book identifiers.</li>
+</ol>
+<p>The representation of these objects must not be ambiguous in <code>MusicMatch</code>. The second topic is the mapping of rigths and licenses into the <code>PON</code> ontologies. In this case, only limited support can be achieved over a short period of time, however, there are some opportunities of quick fixes with the replacement of the ambiguous and even misleading <code>hasLicense</code> property.</p>
+<section id="music-entity-and-composition-object" class="level3">
+<h3 class="anchored" data-anchor-id="music-entity-and-composition-object">Music entity and Composition Object</h3>
+<p>It is unclear what is the difference between the <code>MusicalEntity</code> and <code>CompositionObject</code>? Is <code>MusicalEntity</code> broader in that it includes scale practices and improvisation? Or, if the <code>CompositionObject</code> still consists of these practices, than we need a <code>MusicWork</code> object.</p>
+<p>Generally, the Music work is such a central concept of music that it should have an equivalent class. It is paramount to how music is stored, published, and licensed. The music work is a composition that is considered “final”, i.e., the process of composition was finished, and the creator somehow “recorded” the abstract music in music notation or recording it. Once the music work is registered and published, other musicians can play it (with a license).</p>
+<p>The <code>MusicWork</code> can have opus statements, dedications, text (lyrics or libretto), and instrumentalisation attached. It has a global identification system; the ISWC (International Standard Musical Work Code) is an internationally recognised reference number for identifying musical works; the CIS-Net database currently contains 52 million works. All industry databases use the music work concept. From an industry perspective, I do not see the <code>CompositionObject</code> and <code>MusicalEntity</code> differences because the definition of a <code>MusicalWork</code> is intentionally very abstract.</p>
+<p>Because most industry and heritage databases use the <code>MusicalWork</code> and the ISWC as their PID, an equivalence relationship, in this case, would be essential for usability. In my opinion, the <code>MusicalEntity</code> and the <code>CompositionObject</code> should only differ because the creator deems one of them complete in the sense that it is worth repeating. The broader category should include trivial music like scale practising, doodles of later music works, or improvisation not intended to be repeated. Once a music is composed, i.e., it is open to be performed, even if with newer and newer arrangements, it should be a <code>MusicalWork</code>.</p>
+</section>
+<section id="recording-process-performing-process-and-rights" class="level3">
+<h3 class="anchored" data-anchor-id="recording-process-performing-process-and-rights">Recording process, performing process, and rights</h3>
+<p><code>MusicalPerformance</code> and <code>RecordingProcess</code> are both derived from <code>CreativeProcess</code>. They both require a license if the music work is still protected.</p>
+<ul>
+<li><p>A <code>MusicalPerformance</code> that is performed in front of the public is the live performance, and it requires a public performance license.</p></li>
+<li><p>A <code>StudioPerformance</code> is not performed in front of the public but it requires a mechanical license to create the recorded fixation.</p></li>
+<li><p>A Live recording is the mix of the two, when the musical work is recorded in front of a public audience.</p></li>
+</ul>
+<p>The following elements of the <em>Convention for the Protection of Producers of Phonograms Against Unauthorized Duplication of Their Phonograms</em> should be very clearly present in the ontology, because they apply to more than 100 million sound recordings.</p>
+<ol type="a">
+<li><p>“phonogram” means any exclusively aural fixation of sounds of a performance or of other sounds; <em>appears to be identical to Recording</em></p></li>
+<li><p>“producer of phonograms” means the person who, or the legal entity which, first fixes the sounds of a performance or other sounds; this is a special role;</p></li>
+<li><p>“duplicate” means an article which contains sounds taken directly or indirectly from a phonogram and which embodies all or a substantial part of the sounds fixed in that phonogram; <em>this will result in a mechanical license</em></p></li>
+<li><p>“distribution to the public” means any act by which duplicates of a phonogram are offered, directly or indirectly, to the general public or any section thereof.</p></li>
+</ol>
+</section>
+<section id="recording-and-release" class="level3">
+<h3 class="anchored" data-anchor-id="recording-and-release">Recording and Release</h3>
+<p>The <code>Commercial Release</code> is another central concept with an PID (International Standard Recording Code), which applies to recordings that are permitted to be distributed to the public. Most music databases contain only such recordings, and they identify the commercially released recordings.</p>
+<p>The <code>Release</code> class should be vetted from a legal point of view, and at least the <code>Commercial Release</code>, which must have an ISRC code, should be differentiated from any other release that does not have it. It is also a convenient distinction because such a recording (with few exceptions) cannot be played publicly.</p>
+<p>The word <code>release</code> in itself refers to a process, and this process has a legal definition. If it is based on pre-existing licenses, it will result in a commercial release with a globally recognised ISRC code and the right to play (with a further license) the music in public. The semantic check of the ‘release’ should be making predicaments with various agents who release a recording and then categorising them.</p>
+<p>The fair use exemption from obtaining a license may be applied for criticism, comment, teaching, scholarship and research. This means that particularly scholarly organisations may hold not commercially released recordings.</p>
+<ul>
+<li><p>A <code>commercial release</code> is made with the intention of distribution to the public. This can be broadcasted on the basis of a special, <em>blanket license</em>, without explicit permission from the creators of the commercial release.</p></li>
+<li><p>Another typical use case is the recording of performances for comment, teaching, scholarship and research. Music schools, academies, but musicology archives have many such recordings. In this case, the intention is not to make the recording public; usually the recording can be used with limitations, for example, only in a music library.</p></li>
+<li><p>Another exception is when the author releases a non-commercial recording, for example, a demo, on a website like Bandcamp. Such a release does not meet the requirements of a commercial release and, therefore cannot be played in a radio. The intention is to provide a proof-of-concept for a future commercial release or other type of recording. This <em>may be intended for the public</em>, but it cannot be distributed to the public, for example, it cannot be broadcasted, at least without explicit consent from the creator.</p></li>
+<li><p>Another exception is a recording that the author may deposit as a supplement to register the work as a “music score”, mainly if the author is not familiar with music notation. In this case the recording plays a special role, to use it as an identifier for the more abstract music work, and it is <em>not intended</em> to make public.</p></li>
+</ul>
+<p>A better classification of the recordings is essential to use the <code>MusicMatch</code> with sound recording databases. These databases usually contain recordings with one specific purpose; for example, the SOZA database uses the (4) recordings, the SLOVGRAM database or the Deezer API the (1) type recordings, the Slovak Music Information Center has a mix of (1) and (2) recordings, and Bandcamp is packed with (1) and (3) recordings. Since these recordings can be used differently and have different licences, a classification is necessary. As a first step, the most frequent class with a global PID, i.e.&nbsp;the commercial release, should be detached from other <code>Recordings</code>. A binary <code>Commercial release</code> and <code>Non-commercial release</code> would be already helpful, or a <code>Commercial release</code>, and <code>Non-commercial release</code>.</p>
+<p>Last, I need to use a special property, “Public domain”. While there are different ways various releases can go into the public domain, from a cultural heritage and rights management perspective, this property is paramount because it means that no license is needed to use the recording. In any other case, a set of various licensing conditions may be attached, but for the public domain, this is not necessary.</p>
+</section>
+</section>
+<section id="licensing" class="level2">
+<h2 class="anchored" data-anchor-id="licensing">Licensing</h2>
+<p>The <code>hasLicense</code> property is defined as “a Recording, Release, or Score is associated with a specific License. This property represents the relationship between a musical recording, a release of music, or a musical score, and the license that governs its usage and distribution. It indicates that the mentioned Recording, Release, or Score is subject to the terms and conditions defined by the mentioned License.”</p>
+<p>In music, we differentiate among different rights: 1. synchronization and other grand rights (when the music will be part of a larger artwork, such as a film or a theatrical, staged production); 2. public performance rights (broadcasting rights fall under this); 3. mechanical reproduction rights, and then we have hybrid rights, or situations when both types of licensing is required. We have two groups of rightsholder: authors (copyright holders), and producers/performers (sound recording copyright or neighboring right holders).</p>
+<p>It is questionable if the same <code>hasLicense</code> property should be applied for a <code>Recording</code>, <code>Release</code>, or <code>Score</code>, because they represent a different right and a different type of a license; furthermore, we must realise that we are talking about a hierarchy of three licenses that are built on each other. Some of the licenses are not valid without a prior license! The purpose of these licenses, and their place in the licensing hierarchy is so different that a generic <code>hasLicense</code> will almost certainly result in mapping errors.</p>
+<p>I am not even sure that the <code>hasLicense</code> property is helpful in this form. I think it should be replaced with <code>hasAuthorsRight</code> and <code>hasNeighbouringRight</code> properties.</p>
+<p>The <code>License</code> could be modelled similarly to provenance, but it would be very complicated, like PROVO itself. A License must be given by a competent Agent, where qualified Persons act in various Roles. It connects the Agent, the Music object, with multiple Use contexts (“Broadcast on TV”, “Retransmission on Cable TV”, “Digitally stream”, “Play on stage”) with a term as a time interval.</p>
+<p>The Licenses are contextual; broadcasting licenses are blanket licenses where the rightsholders do not need to be informed; stage rights can relate to a single event. The <code>hasLicense</code> property is so vague that it cannot be observed. There is no single database for all licenses, and most music databases do not contain the license, only the right to obtain or give a license. The <code>hasLicense</code> property causes semantic confusion and makes mapping in databases impossible.</p>
+<p>I would suggest different properties:</p>
+<ol type="1">
+<li>Is the <code>Musical_work</code> in the public domain, or does it require a public performance license to be played in front of the public and a mechanical copying license to be recorded (it has a copyright in the US/UK or author’s right in the EU)</li>
+<li>Is the <code>Recording</code> in the public domain, or does it require a mechanical right to be duplicated and a public performance right to be distributed or communicated to the public? (In the US/UK, it has a sound recording copyright, or in the EU, it has neighbouring rights for producers and performers.)</li>
+<li>Is the <code>Music notation</code> in the public domain, or does it require a rental or copying license.</li>
+<li>Are there any other limitations in place to play the music or its recording in public (explicit lyrics in specific broadcasts, not covered by blanket licensing for broadcast, only available for scholarly use, only for liturgical use.)</li>
+</ol>
+<p>A binary property.<code>inPublicDomain</code> would be beneficial because, in this case, we do not talk about rightsholders; therefore, no license can be given or obtained. Any further case is too complex to be described by a <code>hasLicense</code> property.</p>
+<p>I think that licensing is not well represented with objects (“licenses”) or events (“licensing events”), they would require a more sophisticated process mapping. If we look at PROVO-O, a widely used ontology, it has the <a href="https://www.w3.org/TR/prov-o/#Plan">prov:Plan</a> class, similar to other ontologies’ process management or quality assurance classes.</p>
+<p>The <code>Plan</code> is a set of rules that <code>Agents</code> in various <code>Roles</code> are expected to follow. This is very helpful when multiple persons are involved in a thing’s curation, selection, measurement, documentation, and quality control.</p>
+<p>In my opinion, this is a good analogy for a <code>LicensingPolicy</code> class. For example, the recording of the live performance of the “Nirvana Unplugged in MTV” album has required several different licenses to be played on television, on cable television, on radio, on a theatre stage, or digital streaming platforms. The <code>hasLicense</code> property is entirely contextual: the “About a Girl” recording has a different set of licenses (in plural) on cable television or if it appears on an LCD screen in a theatre.</p>
+<p>Designing a suitable <code>LicensingPolicy</code> object would require a three-year project. But from a database point of view, most music databases do not even contain this information what they have if there are particular types of rights attached to the musical work or the recording.</p>
+</section>
+<section id="case-study-briging-back-rare-music-into-circulation" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-briging-back-rare-music-into-circulation">Case study: Briging back rare music into circulation</h2>
+<p>One of the most important uses of the Slovak Comprehensive Music Database is the clarification of the legal status of a large body of sound recordings which are currently under the custody of the Slovak Music Information Center. These works had been in most cases performed on radio (in the former Czechoslovakia, under a different rights management regime) or played on stage and recorded without the intent to distribute the recording to the public.</p>
+<p>In some cases, the recordings may had been distributed to the public, but the documentation does not exists; they are certainly out of circulation, but we do not know if this is due the fact that they must not be in circulation, or they are just out of circulation for commercial reasons. We want to create a link between the archive of the <code>Slovak Music Information Center</code> and <code>SOZA</code>, and if possible, <code>SLOVGRAM</code>, to identify works that are out of circulation but could be legally available for radio broadcasting or music streaming.</p>
+<p>In other cases, the original aim of the recording was explicitly not for distribution to the public, but due to the lapse of time, or the scarcity of the recording, there may be a legitimate interest to distribute it to the public now. In these cases we need to identify to the natural and legal persons or their agents (music labels, publishers) to clarify the circumstances under which the legal status of such recordings can be changed. It is also possible that these rare and important recordings can be used as <code>demo recordings</code> to create interest for their new recording and distribution to the public in a newer interpretation or a higher quality audio.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

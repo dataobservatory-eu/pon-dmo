@@ -29,6 +29,8 @@ The `PON` ontologies are well-developed in digital humanities, particularly musi
 
 The testing of PON on more significant parts of the constituent databases of `SKCMDb` would require a written agreement among Hudobné centrum (recordings, databases, publishing rights), `SOZA` (work registers and rights management), `Hudobný Fond` (music sheets and publishing rights), the `Slovak National Library` (which regulates music libraries), and Reprex (as a technical provider of the aforementioned organisations).  A possible way forward is to evaluate very small data samples to draw up this agreement in 1-2 iterations and to include all relevant Polifonia stakeholders in the Digital Music Observatory's stakeholder network because Polifonia's network will end in April 2024. 
 
+Our working hypothesis is that the PON ontologies can support in their current 1.0 form some of the reproducible research work carried out on the Digital Music Observatory and in the Open Music Europe research project.
+
 ## Background
 
 The `Digital Music Observatory` is a prototype of an open, decentralised, reproducible research-supported data observatory that follows the Feasibility Study for establishing a European Music Observatory. High-quality indicators and databases are being developed, consulted with the industry, produced and added to the Digital Music Observatory web resource in various public and private projects. The platform is being developed by Reprex, and the four main Data Pillars by the Open Music Europe project.
